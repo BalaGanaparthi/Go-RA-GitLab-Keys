@@ -1,0 +1,9 @@
+# Go generated files
+*
+!go.mod
+!go.sum
+!netlify.toml
+!README.md
+!netlify/
+!/netlify/functions/keys/main.go
+!.gitignore
