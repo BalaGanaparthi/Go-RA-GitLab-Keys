@@ -1,6 +1,8 @@
 [build]
   # Netlify will automatically detect and build Go functions
   # No custom build command needed for Go functions
+  command = ""
+  publish = ""
 
 [build.environment]
   # Set Go version for the build environment
