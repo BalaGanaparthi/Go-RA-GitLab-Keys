@@ -4,6 +4,6 @@
 !go.sum
 !netlify.toml
 !README.md
-!netlify/
+!/netlify/functions/keys/
 !/netlify/functions/keys/main.go
 !.gitignore
