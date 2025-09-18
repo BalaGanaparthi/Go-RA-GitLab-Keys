@@ -8,4 +8,6 @@
 !/netlify/functions/
 !/netlify/functions/keys/
 !/netlify/functions/keys/main.go
+!/site/
+!/site/index.html
 !.gitignore
