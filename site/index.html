@@ -1,11 +1,46 @@
-<html>
-  <head>
-    <title>RA GitLab Keys</title>
-  </head>
-  <body>
-    <h1>RA GitLab Keys</h1>
-    <p>
-       RA GitLab Keys.
-    </p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RA GitLab OIDC Keys</title>
+</head>
+<body>
+    <h1>RA GitLab OIDC Keys</h1>
+    <div id="responseContainer">
+        Loading response...
+    </div>
+
+    <script>
+        // Define the URL for your API call
+        const apiUrl = 'https://jsonplaceholder.typicode.com/todos/1'; // Example API URL
+
+        // Fetch data from the API
+        fetch(apiUrl)
+            .then(response => {
+                // Check if the response is successful (status code 200-299)
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                // Parse the response as JSON
+                return response.json();
+            })
+            .then(data => {
+                // Get the div element to display the response
+                const responseContainer = document.getElementById('responseContainer');
+                
+                // Clear the "Loading response..." message
+                responseContainer.innerHTML = '';
+
+                // Display the JSON data in a preformatted block for readability
+                responseContainer.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            })
+            .catch(error => {
+                // Handle any errors that occurred during the fetch operation
+                const responseContainer = document.getElementById('responseContainer');
+                responseContainer.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    </script>
+</body>
 </html>
